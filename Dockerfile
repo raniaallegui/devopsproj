@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:11
 EXPOSE 8082
-ADD target/achat-1.0.jar proj.jar
-ENTRYPOINT ["java","-jar","proj.jar"]
+ADD target/achat-1.0.jar achat-1.0.jar
+ENTRYPOINT ["java","-jar","achat-1.0.jar"]
