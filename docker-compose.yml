@@ -1,31 +1,27 @@
-version: '3'
+version: '3.8'
 services:
+  # MySQL Database
   mysqldb:
     image: mysql:5.7
     restart: unless-stopped
     environment:
-      - MYSQL_ROOT_PASSWORD=
-      - MYSQL_DATABASE=achatdb
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
     ports:
-      - 3306:3306
+      - 3306:3306  # Map the container's port 3306 to host port 3306
     volumes:
       - db:/var/lib/mysql
 
-  achat:
-    depends_on:
-      - mysqldb
-    build: raniaallegui/achat:1.0.0
+  # Spring Boot Application
+  devops-app:
+    image: raniaallegui/achat:1.0.0  # Replace with your Spring Boot image
     restart: on-failure
-    ports:
-      - 8089:8089
     environment:
-      SPRING_APPLICATION_JSON: '{
-        "spring.datasource.url": "jdbc:mysql://mysqldb:3306/achatdb?useSSL=false&createDatabaseIfNotExist=true",
-        "spring.datasource.username": "root",
-        "spring.datasource.password": "",
-        "spring.jpa.properties.hibernate.dialect": "org.hibernate.dialect.MySQL5InnoDBDialect",
-        "spring.jpa.hibernate.ddl-auto": "update"      }'
-    stdin_open: true
-    tty: true
-volumes:
-  db:
+      MYSQL_ROOT_PASSWORD: root_password
+    ports:
+      - 8082:8082  # Map the container's port 8080 to host port 8080
+        stdin_open: true
+        tty: true
+        depends_on:
+          - mysqldb
+      volumes:
+        db:
