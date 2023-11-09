@@ -10,3 +10,5 @@ o
 ?src/main/java/tn/esprit/rh/achat/services/StockServiceImpl.java,7\7\774a84db3f4411cbf35bc1a488de22a7d063b9cd
 n
 >src/test/java/tn/esprit/rh/achat/service/StockServiceImpl.java,b\1\b140310cef07df5d2562a86caf8c133f6f97d019
+l
+<src/main/java/tn/esprit/rh/achat/services/IStockService.java,8\f\8fb7acc6bc4b1fa83f73fe2e618701eb76ae29a3
