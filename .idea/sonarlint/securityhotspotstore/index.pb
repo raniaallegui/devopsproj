@@ -12,3 +12,5 @@ s
 Csrc/main/java/tn/esprit/rh/achat/services/ReglementServiceImpl.java,c\1\c13e0ff7aca066bfd19e6824efd5fbe477ed6fdf
 [
 +src/test/java/ReglementServiceImplTest.java,0\9\09630c1145100a76605e7ed07872bf1137848603
+u
+Esrc/main/java/tn/esprit/rh/achat/controllers/StockRestController.java,2\2\2217e1a178510d28a7fc03ee4626b1821fa022bd

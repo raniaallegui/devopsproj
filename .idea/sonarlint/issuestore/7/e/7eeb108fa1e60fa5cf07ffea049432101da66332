@@ -5,4 +5,6 @@ r
 java:S1488!"\Immediately return this expression instead of assigning it to the temporary variable "list".(Õ–È
 X
 java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+\
+java:S4684"@Replace this persistent entity with a simple POJO or DTO object.(öØÇ18úÍ‰»1
 Q	java:S1253"<This block of commented-out lines of code should be removed.(°÷±ë

@@ -6,13 +6,13 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class StockService {
-  private apiUrl = 'http://192.168.33.10:8082/stock';
+  private apiUrl = 'http://192.168.33.10:8082/SpringMVC/stock';
 
   constructor(private http: HttpClient) {
   }
 
   public fetchAllData(): Observable<any> {
-    return this.http.get(`${this.apiUrl}`);
+    return this.http.get(`${this.apiUrl}/retrieve-all-stocks`);
   }
 
   public fetchData(id: any): Observable<any> {
@@ -25,7 +25,7 @@ export class StockService {
 
   public addStock(stock: any): Observable<any> {
 
-    return this.http.post(`${this.apiUrl}`, stock);
+    return this.http.post(`${this.apiUrl}/add-stock`, stock);
   }
 
 
