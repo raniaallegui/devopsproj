@@ -12,13 +12,13 @@ services:
     volumes:
       - db:/var/lib/mysql
   frontend:
-    image: yasminebenabda/devops_project_front
+    image: yasminebenabda/achat
     ports:
       - "80:80"
 
   # Spring Boot Application
   devops-app:
-    image: yasminebenabda/achat:1.0.0  # Replace with your Spring Boot image
+    image: yasminebenabda/achat1:1.0.0  # Replace with your Spring Boot image
     restart: on-failure
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/achatdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
